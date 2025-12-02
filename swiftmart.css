@@ -158,7 +158,7 @@
             margin-top: 80px;
             height: 90vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url('images/hero.webp');
+            url('assets/images/hero.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -923,4 +923,5 @@
             .faq-grid {
                 grid-template-columns: 1fr;
             }
+
         }
