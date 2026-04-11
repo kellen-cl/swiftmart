@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftMart Supermarket - Fresh Quality Every Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="swiftmart.css">
+    <script src="swiftmart.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+        <div class="logo">
+            <div class="logo-letters">
+                <span class="logo-s">S</span>
+                <span class="logo-m">M</span>
+            </div>
+        </div>
+        <span class="brand-name">SwiftMart Supermarket</span>
+    </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#offers">Offers</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero  -->
+    <section class="hero" id="home">
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search products...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="hero-content">
+            <h1>Shop Smart, Live Fresh</h1>
+            <p>Your Daily Essentials, Delivered Fresh Every Day!</p>
+            <a href="#products" class="cta-button">View Our Products</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="categories-container">
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3><i class="fas fa-filter"></i> Filter By</h3>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="vegetables">
+                        <label for="vegetables">Vegetables</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="dairy">
+                        <label for="dairy">Dairy Products</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="bakery">
+                        <label for="bakery">Bakery</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="beverages">
+                        <label for="beverages">Beverages</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="snacks">
+                        <label for="snacks">Snacks</label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" min="0">
+                        <input type="number" placeholder="Max" min="0">
+                    </div>
+                    <button class="apply-filter-btn">Apply</button>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Quick Filters</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="instock">
+                        <label for="instock">In Stock</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="onsale">
+                        <label for="onsale">On Sale</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="new">
+                        <label for="new">New Arrivals</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="organic">
+                        <label for="organic">Organic</label>
+                    </div>
+                </div>
+
+                <button class="apply-filter-btn" style="background: var(--dark-gray); margin-top: 20px;">
+                    Reset All Filters
+                </button>
+            </aside>
+
+            <div class="category-slideshow" id="slideshow">
+
+                <div class="slide active" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('images/vegetables.webp' ) center/cover;">
+                    <div class="slide-content">
+                        <h2>🥬 Fresh Vegetables</h2>
+                        <p>Farm-fresh produce delivered daily</p>
+                    </div>
+                </div>
+
+                <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('images/dairy.jpeg' ) center/cover;">
+                    <div class="slide-content">
+                        <h2>🥛 Dairy Products</h2>
+                        <p>Fresh milk, cheese, and yogurt</p>
+                    </div>
+                </div>
+
+                <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('images/bakery.jpg' ) center/cover;">
+                    <div class="slide-content">
+                        <h2>🍞 Fresh Bakery</h2>
+                        <p>Baked fresh every morning</p>
+                    </div>
+                </div>
+
+                <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('images/Beverages.jpeg' ) center/cover;">
+                    <div class="slide-content">
+                        <h2>🥤 Beverages</h2>
+                        <p>Stay refreshed with our drinks</p>
+                    </div>
+                </div>
+
+                <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('images/snacks.jpg' ) center/cover;">
+                    <div class="slide-content">
+                        <h2>🍿 Snacks & More</h2>
+                        <p>Tasty treats for every occasion</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="alert('Vegetables category clicked!')">
+                    <div class="product-image" style="background-image: url('images/veggies.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Fresh</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vegetables</h3>
+                        <p class="product-count">48 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Dairy category clicked!')">
+                    <div class="product-image" style="background-image: url('images/dairy.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Cold</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dairy Products</h3>
+                        <p class="product-count">32 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Bakery category clicked!')">
+                    <div class="product-image" style="background-image: url('images/cakes.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Fresh</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bakery</h3>
+                        <p class="product-count">24 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Cleaning category clicked!')">
+                    <div class="product-image" style="background-image: url('images/cleaning.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cleaning & Homecare</h3>
+                        <p class="product-count">56 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Electronics category clicked!')">
+                    <div class="product-image" style="background-image: url('images/electronics.jpg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Hot</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Electronics</h3>
+                        <p class="product-count">18 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Beverages category clicked!')">
+                    <div class="product-image" style="background-image: url('images/Soft Drinks.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Beverages</h3>
+                        <p class="product-count">64 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Snacks category clicked!')">
+                    <div class="product-image" style="background-image: url('images/snackss.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Sale</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Snacks</h3>
+                        <p class="product-count">72 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Meat category clicked!')">
+                    <div class="product-image" style="background-image: url('images/meat.jpg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Fresh</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Meat & Poultry</h3>
+                        <p class="product-count">28 Products Available</p>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="alert('Frozen category clicked!')">
+                    <div class="product-image" style="background-image: url('images/frozen.jpeg'); background-size: cover; background-position: center;">
+                        <span class="product-badge">Frozen</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Frozen Foods</h3>
+                        <p class="product-count">36 Products Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers  -->
+    <section id="offers">
+        <div class="offers-header">
+            <h2>🔥 THIS WEEK'S HOT DEALS! 🔥</h2>
+            <p style="font-size: 1.2rem; color: #666;">Limited time offers - Grab them before they're gone!</p>
+        </div>
+        <div class="offers-grid">
+
+            <div class="offer-column">
+                <h3>💰 Big Discounts</h3>
+                <div class="offer-item">
+                    <span class="discount-badge">-30%</span>
+                    <h4>Fresh Vegetables Bundle</h4>
+                    <p style="color: #666; margin: 10px 0;">Get 30% off on all fresh vegetables</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">2</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">14</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">23</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">45</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">-25%</span>
+                    <h4>Dairy Products Special</h4>
+                    <p style="color: #666; margin: 10px 0;">Save on milk, cheese & yogurt</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">1</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">8</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">45</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">-40%</span>
+                    <h4>Cleaning Essentials</h4>
+                    <p style="color: #666; margin: 10px 0;">Huge savings on homecare items</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">3</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">6</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">30</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="offer-column">
+                <h3>🎁 Buy 1 Get 1 Free</h3>
+                <div class="offer-item">
+                    <span class="discount-badge">BOGO</span>
+                    <h4>Premium Bread Loaves</h4>
+                    <p style="color: #666; margin: 10px 0;">Buy one loaf, get one free!</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">0</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">18</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">34</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">22</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">BOGO</span>
+                    <h4>Soft Drinks 2L</h4>
+                    <p style="color: #666; margin: 10px 0;">Double the refreshment, same price</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">1</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">18</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">56</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">BOGO</span>
+                    <h4>Chips & Snacks Combo</h4>
+                    <p style="color: #666; margin: 10px 0;">Perfect for movie night!</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">2</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">9</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">41</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">03</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="offer-column">
+                <h3>🌟 Seasonal Promotions</h3>
+                <div class="offer-item">
+                    <span class="discount-badge">50% OFF</span>
+                    <h4>Winter Warmers Bundle</h4>
+                    <p style="color: #666; margin: 10px 0;">Hot beverages & comfort foods</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">5</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">22</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">15</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">38</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">-35%</span>
+                    <h4>BBQ Season Specials</h4>
+                    <p style="color: #666; margin: 10px 0;">Meat, marinades & more</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">4</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">16</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">52</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">19</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-item">
+                    <span class="discount-badge">-20%</span>
+                    <h4>Back to School Essentials</h4>
+                    <p style="color: #666; margin: 10px 0;">Snacks & lunch box items</p>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="number">6</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">3</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">28</span>
+                            <span class="label">Mins</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">44</span>
+                            <span class="label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">Why Shop With Us?</h2>
+        <p class="about-intro">
+            At SwiftMart, we're committed to providing you with the freshest products, unbeatable prices, 
+            and exceptional service. Our mission is to make your shopping experience as convenient and 
+            enjoyable as possible while delivering quality you can trust.
+        </p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>To provide our community with fresh, quality products at affordable prices while delivering exceptional customer service and convenience.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>To become the most trusted and preferred supermarket in the region, known for quality, freshness, and innovation in grocery shopping.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                <h3>Our Values</h3>
+                <p>Quality, integrity, customer satisfaction, and community support are at the heart of everything we do at SwiftMart.</p>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">SA</div>
+                    <div class="testimonial-content">
+                        <h4>Sarah Anderson</h4>
+                        <p>"SwiftMart has become my go-to supermarket! The produce is always fresh, prices are great, and the staff is incredibly friendly. I especially love their weekly deals!"</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">MJ</div>
+                    <div class="testimonial-content">
+                        <h4>Michael Johnson</h4>
+                        <p>"Best shopping experience! Wide variety of products, clean store, and the online ordering system is super convenient. Delivery is always on time!"</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">EP</div>
+                    <div class="testimonial-content">
+                        <h4>Emily Parker</h4>
+                        <p>"I've been shopping at SwiftMart for years. The quality never disappoints, and their customer service goes above and beyond. Highly recommended!"</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact  -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-cards">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>+254 712 345 678</p>
+                    <p>+254 733 456 789</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>info@swiftmart.com</p>
+                    <p>support@swiftmart.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <p>123 Main Street</p>
+                    <p>Nairobi, Kenya</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8193308031596!2d36.82194631475392!3d-1.2920659990621155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6d7a82e39%3A0x32b1c3e1b8e4fcf5!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs  -->
+    <section id="faqs">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-search">
+            <input type="text" placeholder="Type your question here..." onkeyup="searchFAQs(this.value)">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What are your store hours?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We're open Monday to Saturday from 7:00 AM to 9:00 PM, and Sundays from 8:00 AM to 8:00 PM. 
+                    We're here to serve you at your convenience!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer home delivery?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer same-day delivery for orders placed before 2:00 PM within a 10km radius. 
+                    Delivery fees apply based on distance. Free delivery on orders above KES 5,000!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We accept cash, M-PESA, credit/debit cards (Visa, Mastercard), and all major mobile payment 
+                    platforms. We also offer convenient payment on delivery options!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I return or exchange products?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, we have a 7-day return policy for non-perishable items with receipt. Perishable items 
+                    can be exchanged within 24 hours if there's a quality issue. Your satisfaction is our priority!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you have a loyalty program?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! Join our SwiftMart Rewards program and earn points on every purchase. 
+                    Points can be redeemed for discounts, and members get exclusive access to special deals!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I place an online order?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Simply browse our products, add items to your cart, proceed to checkout, and choose your 
+                    preferred payment and delivery options. You'll receive a confirmation via SMS and email!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 SwiftMart Supermarket. All Rights Reserved.</p>
+        <p class="copyright">Made with ❤️ for the Community</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+</body>
+</html>
